@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:track_list/screen.dart';
-
 import 'home_screen.dart';
 
 void main() => runApp(TrackListApp());
@@ -14,80 +12,61 @@ class TrackListApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.grey,
       ),
-      home: TrackPager(),
+      home: TrackTabs(),
     );
   }
 }
 
-class TrackPager extends StatefulWidget {
+class TrackTabs extends StatefulWidget {
   @override
-  _TrackPagerState createState() => _TrackPagerState();
+  _TrackTabsState createState() => _TrackTabsState();
 }
 
-class _TrackPagerState extends State<TrackPager> {
-  final int pageCount = 1; // TODO to 4 fragment? おそらく間違ってる。自動で動くような奴があるはず。youtubeにあったと思う。
-  final widgetList = <Screen>[
-    HomeScreen( title: "HOME Screen"),
+class _TrackTabsState extends State<TrackTabs> with SingleTickerProviderStateMixin {
+  final List<Tab> tabs = <Tab>[
+    Tab(text: 'Home Screen'),
   ];
 
-  int _counter = 0;
+  TabController _tabController;
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter = (_counter + 1) % pageCount;
-    });
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(
+      vsync: this,
+      length: tabs.length
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        title: Text(widgetList[_counter].getTitle()),
+          title: Text('List of Tracks'),
+          bottom: TabBar(
+            controller: _tabController,
+            tabs: tabs,
+          ),
       ),
-      body: Center(
-        child: Column(
-          // Column is also layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      body: TabBarView(
+        controller: _tabController,
+        children: tabs.map((Tab tab) {
+          return createTab(tab);
+        }).toList(),
+      )
+    );
+  }
+
+  Widget createTab(Tab tab) {
+    if (tab.text == 'Home Screen') {
+      return Center(
+          child: HomeScreen(
+              title: tab.text
+          )
+      );
+    }
+    return Center(
+      child: Text('List of Track'),
     );
   }
 }
