@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:track_list/screen_pages/home_screen.dart';
 
+const String DEFAULT_TITLE = "List of Tracks";
+
 class TrackListApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'List of Tracks',
+      title: DEFAULT_TITLE,
       theme: ThemeData(
         primarySwatch: Colors.grey,
       ),
@@ -41,7 +43,7 @@ class _TrackTabsState extends State<TrackTabs> with SingleTickerProviderStateMix
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('List of Tracks'),
+        title: Text(DEFAULT_TITLE),
         bottom: TabBar(
           controller: _tabController,
           isScrollable: true,
@@ -70,7 +72,7 @@ class _TrackTabsState extends State<TrackTabs> with SingleTickerProviderStateMix
 
       default:
         return Center(
-          child: Text('List of Track'),
+          child: Text(DEFAULT_TITLE),
         );
     }
   }
