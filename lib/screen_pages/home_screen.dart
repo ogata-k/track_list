@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:track_list/screen.dart';
+import 'package:track_list/screen_pages/screen.dart';
 
 // ホーム
 class HomeScreen extends Screen{
@@ -13,7 +13,10 @@ class HomeScreen extends Screen{
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return null;
+    return Scaffold(
+      body: Center(
+        child: Text(widget.getTitle()),
+      ),
+    );
   }
 }
