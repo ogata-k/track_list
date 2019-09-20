@@ -29,6 +29,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.14.11"
+  content_provider:
+    dependency: "direct main"
+    description:
+      name: content_provider
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.1"
   cupertino_icons:
     dependency: "direct main"
     description:
