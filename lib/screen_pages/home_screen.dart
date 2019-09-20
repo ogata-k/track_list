@@ -3,7 +3,6 @@ import 'package:track_list/screen_pages/screen.dart';
 
 // ホーム
 class HomeScreen extends Screen {
-
   HomeScreen({Key key, String title}) : super(key: key, title: title);
 
   @override
@@ -15,6 +14,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
+        // TODO this is a stub
         child: Text(widget.title),
       ),
     );

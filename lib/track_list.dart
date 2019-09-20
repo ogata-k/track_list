@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:track_list/screen_pages/home_screen.dart';
-
-const String DEFAULT_TITLE = "List of Tracks";
+import 'package:track_list/screen_pages/track_list_screen.dart';
+import 'enum/tab_name.dart';
+import 'model/track.dart';
 
 class TrackListApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -22,21 +23,18 @@ class TrackTabs extends StatefulWidget {
   _TrackTabsState createState() => _TrackTabsState();
 }
 
-class _TrackTabsState extends State<TrackTabs> with SingleTickerProviderStateMixin {
+class _TrackTabsState extends State<TrackTabs>
+    with SingleTickerProviderStateMixin {
   TabController _tabController;
-  static const String HOME_SCREEN = "Home Screen";
 
   final List<Tab> tabs = <Tab>[
-    Tab(text: HOME_SCREEN),
+    Tab(text: tabNameToString(TabName.HomeScreen)),
   ];
 
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(
-        vsync: this,
-        length: tabs.length
-    );
+    _tabController = TabController(vsync: this, length: tabs.length);
   }
 
   @override
@@ -61,15 +59,16 @@ class _TrackTabsState extends State<TrackTabs> with SingleTickerProviderStateMix
 
   Widget createTab(Tab tab) {
     // ページ生成
-    switch (tab.text) {
-      case HOME_SCREEN:
-        return Center(
-            child: HomeScreen(
-                title: tab.text
-            )
-        );
+    switch (tabNameFromString(tab.text)) {
+      case TabName.HomeScreen:
+        return Center(child: HomeScreen(title: tab.text));
         break;
-
+      case TabName.TrackList:
+        return Center(
+            child: TrackListScreen(
+          tracks: <Track>[],
+          title: tab.text,
+        ));
       default:
         return Center(
           child: Text(DEFAULT_TITLE),
