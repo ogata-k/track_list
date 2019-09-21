@@ -8,10 +8,37 @@ class TrackItem extends StatelessWidget {
   const TrackItem({Key key, this.track}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    // TODO this is stub
-
-    return Center(
-        child: Text(this.track.artist),
+    final int _minutes = (this.track.duration / 60).floor();
+    final int _seconds = this.track.duration % 60;
+    return Container(
+      alignment: Alignment.topLeft,
+      padding: EdgeInsets.all(3),
+      child: Column(
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              Text(
+                this.track.title,
+                style: TextStyle(fontSize: 17.0),
+              ),
+              Text(
+                '($_minutes : $_seconds)',
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 14.0,
+                ),
+              )
+            ],
+          ),
+          Text(
+            this.track.artist,
+            style: TextStyle(
+             fontSize: 14.0,
+            ),
+            textAlign: TextAlign.left,
+          ),
+        ]
+      )
     );
   }
 }

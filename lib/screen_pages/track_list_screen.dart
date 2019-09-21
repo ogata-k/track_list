@@ -10,7 +10,7 @@ class TrackListScreen extends Screen {
   TrackListScreen({Key key, this.tracks, String title})
       : super(key: key, title: title);
 
-  @override // TODO this argument is stub
+  @override
   _TrackListScreenState createState() => _TrackListScreenState();
 }
 
