@@ -1,4 +1,6 @@
 // コンテンツプロバイダに保存されている音楽データ1つのモデルクラス
+import 'package:flutter/cupertino.dart';
+
 class Track {
   // track if
   final int id;
@@ -19,6 +21,14 @@ class Track {
   // track number of this album
   final int trackNo;
 
-  Track({this.id, this.albumId, this.artistId, this.path, this.title,
-      this.artist, this.uri, this.duration, this.trackNo});
+  Track(
+      {@required this.id,
+      @required this.albumId,
+      @required this.artistId,
+      @required this.path,
+      @required this.title,
+      @required this.artist,
+      @required this.uri,
+      @required this.duration,
+      @required this.trackNo});
 }
