@@ -8,8 +8,8 @@ class Item extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO this is stub
-    return Scaffold(
-      body: Center(child: Text(this.track.toString())),
+    return Center(
+        child: Text(this.track.artist),
     );
   }
 }

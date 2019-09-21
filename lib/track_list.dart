@@ -29,6 +29,7 @@ class _TrackTabsState extends State<TrackTabs>
 
   final List<Tab> tabs = <Tab>[
     Tab(text: tabNameToString(TabName.HomeScreen)),
+    Tab(text: tabNameToString(TabName.TrackListScreen)),
   ];
 
   @override
@@ -44,7 +45,7 @@ class _TrackTabsState extends State<TrackTabs>
         title: Text(DEFAULT_TITLE),
         bottom: TabBar(
           controller: _tabController,
-          isScrollable: true,
+          isScrollable: false,
           tabs: tabs,
         ),
       ),
@@ -63,12 +64,41 @@ class _TrackTabsState extends State<TrackTabs>
       case TabName.HomeScreen:
         return Center(child: HomeScreen(title: tab.text));
         break;
-      case TabName.TrackList:
-        return Center(
-            child: TrackListScreen(
-          tracks: <Track>[],
-          title: tab.text,
-        ));
+      case TabName.TrackListScreen:
+        return TrackListScreen(
+              tracks: <Track>[
+                new Track(id: 0, albumId: 0, artistId: 0, path: 'here path', title: 'first single', artist: 'your parent', uri: new Uri(), duration: 1995, trackNo: 0),
+                new Track(id: 0, albumId: 0, artistId: 0, path: 'here path', title: 'first single', artist: 'your parent', uri: new Uri(), duration: 1995, trackNo: 0),
+                new Track(id: 0, albumId: 0, artistId: 0, path: 'here path', title: 'first single', artist: 'your parent', uri: new Uri(), duration: 1995, trackNo: 0),
+                new Track(id: 0, albumId: 0, artistId: 0, path: 'here path', title: 'first single', artist: 'your parent', uri: new Uri(), duration: 1995, trackNo: 0),
+                new Track(id: 0, albumId: 0, artistId: 0, path: 'here path', title: 'first single', artist: 'your parent', uri: new Uri(), duration: 1995, trackNo: 0),
+                new Track(id: 0, albumId: 0, artistId: 0, path: 'here path', title: 'first single', artist: 'your parent', uri: new Uri(), duration: 1995, trackNo: 0),
+                new Track(id: 0, albumId: 0, artistId: 0, path: 'here path', title: 'first single', artist: 'your parent', uri: new Uri(), duration: 1995, trackNo: 0),
+                new Track(id: 0, albumId: 0, artistId: 0, path: 'here path', title: 'first single', artist: 'your parent', uri: new Uri(), duration: 1995, trackNo: 0),
+                new Track(id: 0, albumId: 0, artistId: 0, path: 'here path', title: 'first single', artist: 'your parent', uri: new Uri(), duration: 1995, trackNo: 0),
+                new Track(id: 0, albumId: 0, artistId: 0, path: 'here path', title: 'first single', artist: 'your parent', uri: new Uri(), duration: 1995, trackNo: 0),
+                new Track(id: 0, albumId: 0, artistId: 0, path: 'here path', title: 'first single', artist: 'your parent', uri: new Uri(), duration: 1995, trackNo: 0),
+                new Track(id: 0, albumId: 0, artistId: 0, path: 'here path', title: 'first single', artist: 'your parent', uri: new Uri(), duration: 1995, trackNo: 0),
+                new Track(id: 0, albumId: 0, artistId: 0, path: 'here path', title: 'first single', artist: 'your parent', uri: new Uri(), duration: 1995, trackNo: 0),
+                new Track(id: 0, albumId: 0, artistId: 0, path: 'here path', title: 'first single', artist: 'your parent', uri: new Uri(), duration: 1995, trackNo: 0),
+                new Track(id: 0, albumId: 0, artistId: 0, path: 'here path', title: 'first single', artist: 'your parent', uri: new Uri(), duration: 1995, trackNo: 0),
+                new Track(id: 0, albumId: 0, artistId: 0, path: 'here path', title: 'first single', artist: 'your parent', uri: new Uri(), duration: 1995, trackNo: 0),
+                new Track(id: 0, albumId: 0, artistId: 0, path: 'here path', title: 'first single', artist: 'your parent', uri: new Uri(), duration: 1995, trackNo: 0),
+                new Track(id: 0, albumId: 0, artistId: 0, path: 'here path', title: 'first single', artist: 'your parent', uri: new Uri(), duration: 1995, trackNo: 0),
+                new Track(id: 0, albumId: 0, artistId: 0, path: 'here path', title: 'first single', artist: 'your parent', uri: new Uri(), duration: 1995, trackNo: 0),
+                new Track(id: 0, albumId: 0, artistId: 0, path: 'here path', title: 'first single', artist: 'your parent', uri: new Uri(), duration: 1995, trackNo: 0),
+                new Track(id: 0, albumId: 0, artistId: 0, path: 'here path', title: 'first single', artist: 'your parent', uri: new Uri(), duration: 1995, trackNo: 0),
+                new Track(id: 0, albumId: 0, artistId: 0, path: 'here path', title: 'first single', artist: 'your parent', uri: new Uri(), duration: 1995, trackNo: 0),
+                new Track(id: 0, albumId: 0, artistId: 0, path: 'here path', title: 'first single', artist: 'your parent', uri: new Uri(), duration: 1995, trackNo: 0),
+                new Track(id: 0, albumId: 0, artistId: 0, path: 'here path', title: 'first single', artist: 'your parent', uri: new Uri(), duration: 1995, trackNo: 0),
+                new Track(id: 0, albumId: 0, artistId: 0, path: 'here path', title: 'first single', artist: 'your parent', uri: new Uri(), duration: 1995, trackNo: 0),
+                new Track(id: 0, albumId: 0, artistId: 0, path: 'here path', title: 'first single', artist: 'your parent', uri: new Uri(), duration: 1995, trackNo: 0),
+                new Track(id: 0, albumId: 0, artistId: 0, path: 'here path', title: 'first single', artist: 'your parent', uri: new Uri(), duration: 1995, trackNo: 0),
+                new Track(id: 0, albumId: 0, artistId: 0, path: 'here path', title: 'first single', artist: 'your parent', uri: new Uri(), duration: 1995, trackNo: 0),
+                new Track(id: 0, albumId: 0, artistId: 0, path: 'here path', title: 'first single', artist: 'your parent', uri: new Uri(), duration: 1995, trackNo: 0),
+              ],
+              title: tab.text,
+        );
       default:
         return Center(
           child: Text(DEFAULT_TITLE),

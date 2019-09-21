@@ -19,6 +19,6 @@ class Track {
   // track number of this album
   final int trackNo;
 
-  Track(this.id, this.albumId, this.artistId, this.path, this.title,
-      this.artist, this.uri, this.duration, this.trackNo);
+  Track({this.id, this.albumId, this.artistId, this.path, this.title,
+      this.artist, this.uri, this.duration, this.trackNo});
 }
