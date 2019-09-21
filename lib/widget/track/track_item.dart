@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:track_list/model/track.dart';
 
-class Item extends StatelessWidget {
+// トラック一覧用の表示
+class TrackItem extends StatelessWidget {
   final Track track;
 
-  const Item({Key key, this.track}) : super(key: key);
+  const TrackItem({Key key, this.track}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     // TODO this is stub
+
     return Center(
         child: Text(this.track.artist),
     );

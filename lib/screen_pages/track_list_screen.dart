@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:track_list/model/track.dart';
 import 'package:track_list/screen_pages/screen.dart';
-import 'package:track_list/widget/track/item.dart' as track;
+import 'package:track_list/widget/track/track_item.dart' as track;
 
 // Screen for list of track
 class TrackListScreen extends Screen {
@@ -28,7 +28,7 @@ class _TrackListScreenState extends State<TrackListScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              (new track.Item(track: item)).build(context),
+              (new track.TrackItem(track: item)).build(context),
             ],
           ),
         );
