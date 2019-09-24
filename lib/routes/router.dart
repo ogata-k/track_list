@@ -26,7 +26,8 @@ class Router {
     );
   }
 
-  static BottomNavigationBar generateBottomNavigator(BuildContext context, int currentIndex){
+  static BottomNavigationBar generateBottomNavigator(
+      BuildContext context, int currentIndex) {
     return BottomNavigationBar(
       currentIndex: currentIndex,
       items: <BottomNavigationBarItem>[
@@ -40,7 +41,7 @@ class Router {
         ),
       ],
       onTap: (int index) {
-        if (index == currentIndex){
+        if (index == currentIndex) {
           return;
         }
         switch (index) {

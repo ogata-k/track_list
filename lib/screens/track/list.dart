@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:track_list/model/track.dart';
 import 'package:track_list/routes/router.dart';
+import 'package:track_list/widget/track/track-item.dart';
 
 class TrackListScreen extends StatefulWidget {
   @override
@@ -22,6 +23,38 @@ class _TrackListScreenState extends State<TrackListScreen> {
         duration: 100,
         trackNo: 1,
       ),
+      Track(
+        id: 2,
+        artistId: 2,
+        albumId: 2,
+        path: 'path',
+        title: 'title',
+        artist: 'artist',
+        uri: Uri(scheme: 'uri'),
+        duration: 200,
+        trackNo: 2,
+      ), Track(
+        id: 3,
+        artistId: 3,
+        albumId: 3,
+        path: 'path',
+        title: 'title',
+        artist: 'artist',
+        uri: Uri(scheme: 'uri'),
+        duration: 300,
+        trackNo: 3,
+      ),
+      Track(
+        id: 4,
+        artistId: 4,
+        albumId: 4,
+        path: 'path',
+        title: 'title',
+        artist: 'artist',
+        uri: Uri(scheme: 'uri'),
+        duration: 400,
+        trackNo: 4,
+      ),
     ];
     return Scaffold(
       appBar: AppBar(
@@ -29,7 +62,7 @@ class _TrackListScreenState extends State<TrackListScreen> {
       ),
       body: ListView(
         children: _trackList.map((Track track) {
-          return Text(track.title);
+          return TrackItem(track).build(context);
         }).toList(),
       ),
       bottomNavigationBar: Router.generateBottomNavigator(context, 1),
