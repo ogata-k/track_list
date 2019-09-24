@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:track_list/pages/home/home.dart';
-import 'package:track_list/pages/track/index.dart';
+import 'package:track_list/routes/router.dart';
 
 class TrackListApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    Router.setupRouter();
     return MaterialApp(
-      title: 'List of Tracks',
+      title: 'List of Track',
       theme: ThemeData(
         primarySwatch: Colors.grey,
       ),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => Home(),
-        '/track': (context) => Index(),
-      },
+      initialRoute: 'home',
+      onGenerateRoute: Router.router.generator,
     );
   }
 }

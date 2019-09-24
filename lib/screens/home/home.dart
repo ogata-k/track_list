@@ -1,25 +1,25 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:track_list/widget/navigation.dart';
+import 'package:track_list/routes/router.dart';
 
-class Home extends StatefulWidget {
+class HomeScreen extends StatefulWidget {
   @override
-  _HomeState createState() => new _HomeState();
+  _HomeScreenState createState() => new _HomeScreenState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Home')),
       body: _buildBody(),
-      bottomNavigationBar: NavigatorBarBuilder(index: 0).create(context),
+      bottomNavigationBar: Router.generateBottomNavigator(context, 0),
     );
   }
 
   Widget _buildBody() {
     return Center(
-      child: Text('Home Page'),
+      child: Text('Home Screen'),
     );
   }
 }

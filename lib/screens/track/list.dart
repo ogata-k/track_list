@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:track_list/model/track.dart';
-import 'package:track_list/widget/navigation.dart';
+import 'package:track_list/routes/router.dart';
 
-class Index extends StatefulWidget {
+class TrackListScreen extends StatefulWidget {
   @override
-  _IndexState createState() => _IndexState();
+  _TrackListScreenState createState() => _TrackListScreenState();
 }
 
-class _IndexState extends State<Index> {
+class _TrackListScreenState extends State<TrackListScreen> {
   @override
   Widget build(BuildContext context) {
     final _trackList = <Track>[
@@ -32,7 +32,7 @@ class _IndexState extends State<Index> {
           return Text(track.title);
         }).toList(),
       ),
-      bottomNavigationBar: NavigatorBarBuilder(index: 1).create(context),
+      bottomNavigationBar: Router.generateBottomNavigator(context, 1),
     );
   }
 }
