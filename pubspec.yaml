@@ -20,7 +20,7 @@ dependencies:
   flutter:
     sdk: flutter
   fluro: ^1.5.1
-  content_provider: ^0.0.1
+  flute_music_player: ^0.0.6
   sprintf: ^4.0.2
 
   # The following adds the Cupertino Icons font to your application.

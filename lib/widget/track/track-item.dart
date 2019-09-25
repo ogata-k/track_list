@@ -51,7 +51,7 @@ class TrackItem extends StatelessWidget {
                         style: TextStyle(fontSize: 19.0, color: Colors.grey),
                       ),
                       Text(
-                        sprintf('(%02d : %02d)', [minuteDuration, secondDuration]),
+                        sprintf('(%2d : %02d)', [minuteDuration, secondDuration]),
                         textAlign: TextAlign.center,
                         style: TextStyle(fontSize: 19.0, color: Colors.grey),
                       ),
